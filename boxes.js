@@ -14,12 +14,23 @@ console.log(gsap);
 // })
 
 document.addEventListener('DOMContentLoaded', () => {
-  gsap.to(".box", {
-    rotation: 720,
-    x: 100,
-    duration: 3,
-    repeat: 3,
-    stagger: 0.1,
-    yoyo: true,
-  });
+  // JQuery
+  // $('.green')
+
+  // To select an element with Javascript
+  document.querySelector('.green').addEventListener('click', (event) => {
+    console.log(event);
+    gsap.fromTo(".box", {
+      rotation: 720,
+      x: 100,
+      duration: 3,
+      repeat: 3,
+    }, {
+      rotation: 0,
+      x: -50,
+      duration: 3,
+      repeat: 3,
+    });
+  })
 })
+
